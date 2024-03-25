@@ -1,23 +1,22 @@
+
+
 import React, { useState } from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
-import TodoListItem from './TodoListItem';
 
 function App() {
-  const [newTodo, setNewTodo] = useState('');
+  const [todoList, setTodoList] = useState([]); 
+
+  function addTodo(newTodo) {
+    setTodoList(prevTodoList => [...prevTodoList, newTodo]);
+  }
 
   return (
     <div>
-      <AddTodoForm onAddTodo={setNewTodo} />
-      <p>{newTodo}</p>
-      <TodoList />
+      <AddTodoForm addTodo={addTodo} />
+      <TodoList todoList={todoList} />
     </div>
   );
 }
 
 export default App;
-
-
-
-
-

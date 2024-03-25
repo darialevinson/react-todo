@@ -1,12 +1,9 @@
-import TodoList from './TodoList'
+import React from 'react';
 
-function TodoListItem({ todo }) {
-    return (
-     <ul>
-         <li>
-        {todo.id} - {todo.title}
-      </li>
-     </ul>
-    );
-  }
-export default TodoListItem
+function TodoListItem({ todo }) { 
+  return (
+    <li>{todo.title}</li>
+  );
+}
+
+export default TodoListItem;

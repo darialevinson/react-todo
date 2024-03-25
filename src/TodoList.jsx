@@ -1,32 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TodoListItem from './TodoListItem';
 
-
-
-const todoList = [
-  {
-    id: 1,
-    title: "To install React-app"
-  },
-  {
-    id: 2,
-    title: "To read a book"
-  },
-  {
-    id: 3,
-    title: "Complete assignment"
-  }
-];
-
-function TodoList() {
+function TodoList({todoList}) {
   return (
     <div>
       <h1>List todo</h1>
       <ul>
-        {todoList.map((object, i) => <TodoListItem todo={object} />)}
-      </ul>      
+        {todoList.map((todo, i) => <TodoListItem key={todo.id} todo={todo} />)}
+      </ul> 
     </div>
-  )
+  );
 }
 
 export default TodoList;
